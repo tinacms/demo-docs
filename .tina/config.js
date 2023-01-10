@@ -87,6 +87,11 @@ const schema = {
                   type: "string",
                 },
               ],
+              ui: {
+                defaultItem: {
+                  url: "https://www.youtube.com/watch?v=_q1K7cybyRk",
+                },
+              },
             },
             {
               name: "FeatureSection",
