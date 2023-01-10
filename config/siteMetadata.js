@@ -4,7 +4,7 @@ const siteMetadata = {
   githubRepositoryURL: "https://github.com/tinacms/tina-docs-example",
   socialImage: "/images/social.jpg",
   navItems: [{ title: "Docs", url: "/docs/" }],
-  twitterAccount: "tina_cms",
+  twitterAccount: "tinacms",
   siteUrl: "https://tina.io",
   author: "TinaCMS",
 };
