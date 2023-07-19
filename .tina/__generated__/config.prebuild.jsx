@@ -165,10 +165,12 @@ var config = defineStaticConfig({
     }
   },
   ui: {
-    // Eg. If you're deplying to Vercel, and your repo name is 'my-app', Vercel's preview URL would be based on the branch:
     previewUrl: (context) => {
-      const repoName = "demo-docs";
-      return { url: `https://demo-docs-git-${context.branch}` };
+      if (context.branch === "main")
+        return { url: "" };
+      return {
+        url: `https://demo-docs-git-${decodeURIComponent(context.branch)?.replace("/", "-")?.replace(" ", "-")}-tinacms.vercel.app`
+      };
     }
   },
   cmsCallback: (cms) => {
