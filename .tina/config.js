@@ -166,6 +166,14 @@ export const config = defineStaticConfig({
       mediaRoot: "images",
     },
   },
+  ui: {
+    // Eg. If you're deplying to Vercel, and your repo name is 'my-app', Vercel's preview URL would be based on the branch:
+    previewUrl: (context) => {
+      const repoName = 'demo-docs'
+      // `https://<project-name>-git-<branch-name>.vercel.app`
+      return { url: `https://demo-docs-git-${context.branch}` }
+    },
+  },
   cmsCallback: (cms) => {
     cms.events.subscribe("branch:change", async ({ branchName }) => {
       console.log(`branch change detectted. setting branch to ${branchName}`);
