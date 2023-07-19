@@ -180,8 +180,7 @@ export const config = defineStaticConfig({
   schema,
   search: {
     tina: {
-      indexerToken: process.env.SEARCH_TOKEN,
-      stopwordLanguages: ['eng']
+      indexerToken: process.env.SEARCH_TOKEN
     },
     indexBatchSize: 100,
     maxSearchIndexFieldLength: 100
