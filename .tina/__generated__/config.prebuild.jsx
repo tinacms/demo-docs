@@ -1,6 +1,6 @@
+// .tina/config.js
 import { defineStaticConfig } from "tinacms";
-
-const schema = {
+var schema = {
   collections: [
     {
       label: "Documentation",
@@ -13,12 +13,12 @@ const schema = {
           label: "Title",
           name: "title",
           isTitle: true,
-          required: true,
+          required: true
         },
         {
           type: "string",
           label: "Section",
-          name: "section",
+          name: "section"
         },
         {
           type: "rich-text",
@@ -31,22 +31,22 @@ const schema = {
               ui: {
                 defaultItem: {
                   type: "default",
-                  text: "Lorem ipsum dolor sit amet.",
-                },
+                  text: "Lorem ipsum dolor sit amet."
+                }
               },
               fields: [
                 {
                   name: "type",
                   label: "Type",
                   type: "string",
-                  options: ["default", "warning", "error"],
+                  options: ["default", "warning", "error"]
                 },
                 {
                   name: "text",
                   label: "Text",
-                  type: "string",
-                },
-              ],
+                  type: "string"
+                }
+              ]
             },
             {
               name: "Button",
@@ -55,27 +55,27 @@ const schema = {
                 defaultItem: {
                   type: "primary",
                   text: "Learn More",
-                  url: "https://tina.io",
-                },
+                  url: "https://tina.io"
+                }
               },
               fields: [
                 {
                   name: "type",
                   label: "Type",
                   type: "string",
-                  options: ["primary", "success", "danger", "neutral"],
+                  options: ["primary", "success", "danger", "neutral"]
                 },
                 {
                   name: "text",
                   label: "Text",
-                  type: "string",
+                  type: "string"
                 },
                 {
                   name: "url",
                   label: "Url",
-                  type: "string",
-                },
-              ],
+                  type: "string"
+                }
+              ]
             },
             {
               name: "VideoPlayer",
@@ -84,14 +84,14 @@ const schema = {
                 {
                   name: "url",
                   label: "Video URL",
-                  type: "string",
-                },
+                  type: "string"
+                }
               ],
               ui: {
                 defaultItem: {
-                  url: "https://www.youtube.com/watch?v=_q1K7cybyRk",
-                },
-              },
+                  url: "https://www.youtube.com/watch?v=_q1K7cybyRk"
+                }
+              }
             },
             {
               name: "FeatureSection",
@@ -102,10 +102,10 @@ const schema = {
                     {
                       image: "http://placehold.it/48x48",
                       title: "Hello, World",
-                      desc: "Lorem ipsum dolor sit amet.",
-                    },
-                  ],
-                },
+                      desc: "Lorem ipsum dolor sit amet."
+                    }
+                  ]
+                }
               },
               fields: [
                 {
@@ -117,68 +117,71 @@ const schema = {
                     {
                       name: "image",
                       label: "Feature Image",
-                      type: "image",
+                      type: "image"
                     },
                     {
                       name: "title",
                       label: "Feature Title",
-                      type: "string",
+                      type: "string"
                     },
                     {
                       name: "desc",
                       label: "Feature Text",
                       type: "string",
                       ui: {
-                        component: "textarea",
-                      },
-                    },
-                  ],
-                },
-              ],
-            },
+                        component: "textarea"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
           ],
-          isBody: true,
-        },
+          isBody: true
+        }
       ],
       ui: {
         router: ({ document, collection }) => {
           if (["docs"].includes(collection.name)) {
             return `/docs/${document._sys.filename}`;
           }
-
-          return undefined;
-        },
-      },
-    },
-  ],
+          return void 0;
+        }
+      }
+    }
+  ]
 };
-
-export const config = defineStaticConfig({
+var config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-  branch:
-    process.env.NEXT_PUBLIC_TINA_BRANCH || // custom branch env override
-    process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF || // Vercel branch env
-    process.env.HEAD, // Netlify branch env
+  branch: process.env.NEXT_PUBLIC_TINA_BRANCH || // custom branch env override
+  process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF || // Vercel branch env
+  process.env.HEAD,
+  // Netlify branch env
   token: process.env.TINA_TOKEN,
   media: {
     tina: {
       publicFolder: "public",
-      mediaRoot: "images",
-    },
+      mediaRoot: "images"
+    }
   },
   build: {
-    publicFolder: "public", // The public asset folder for your framework
-    outputFolder: "admin", // within the public folder
+    publicFolder: "public",
+    // The public asset folder for your framework
+    outputFolder: "admin"
+    // within the public folder
   },
   schema,
   search: {
     tina: {
       indexerToken: process.env.SEARCH_TOKEN,
-      stopwordLanguages: ['eng']
+      stopwordLanguages: ["eng"]
     },
     indexBatchSize: 100,
     maxSearchIndexFieldLength: 100
-  },
+  }
 });
-
-export default config;
+var config_default = config;
+export {
+  config,
+  config_default as default
+};
