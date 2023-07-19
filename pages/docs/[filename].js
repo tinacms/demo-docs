@@ -48,10 +48,15 @@ function DocPage(props) {
 }
 export default DocPage;
 
-export const getStaticProps = async ({ params }) => {
-  const { data, query, variables } = await client.queries.documentQuery({
-    relativePath: `${params.filename}.mdx`,
-  });
+export const getStaticProps = async ({ params, preview, previewData }) => {
+  const { data, query, variables } = await client.queries.documentQuery(
+    {
+      relativePath: `${params.filename}.mdx`,
+    },
+    {
+      branch: preview && previewData?.branch,
+    }
+  );
   return {
     props: {
       variables,

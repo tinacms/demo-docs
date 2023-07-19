@@ -153,7 +153,6 @@ const schema = {
   ],
 };
 
-
 export const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   branch:
@@ -166,6 +165,13 @@ export const config = defineStaticConfig({
       publicFolder: "public",
       mediaRoot: "images",
     },
+  },
+  cmsCallback: (cms) => {
+    cms.events.subscribe("branch:change", async ({ branchName }) => {
+      console.log(`branch change detectted. setting branch to ${branchName}`);
+      return fetch(`/api/preview?branchName=${branchName}`);
+    });
+    return cms;
   },
   build: {
     publicFolder: "public", // The public asset folder for your framework
