@@ -98,50 +98,50 @@ var schema = {
                   url: "https://www.youtube.com/watch?v=_q1K7cybyRk"
                 }
               }
-            },
-            {
-              name: "FeatureSection",
-              label: "Feature",
-              ui: {
-                defaultItem: {
-                  featureList: [
-                    {
-                      image: "http://placehold.it/48x48",
-                      title: "Hello, World",
-                      desc: "Lorem ipsum dolor sit amet."
-                    }
-                  ]
-                }
-              },
-              fields: [
-                {
-                  type: "object",
-                  name: "featureList",
-                  label: "Feature List",
-                  list: true,
-                  fields: [
-                    {
-                      name: "image",
-                      label: "Feature Image",
-                      type: "image"
-                    },
-                    {
-                      name: "title",
-                      label: "Feature Title",
-                      type: "string"
-                    },
-                    {
-                      name: "desc",
-                      label: "Feature Text",
-                      type: "string",
-                      ui: {
-                        component: "textarea"
-                      }
-                    }
-                  ]
-                }
-              ]
             }
+            // {
+            //   name: "FeatureSection",
+            //   label: "Feature",
+            //   ui: {
+            //     defaultItem: {
+            //       featureList: [
+            //         {
+            //           image: "http://placehold.it/48x48",
+            //           title: "Hello, World",
+            //           desc: "Lorem ipsum dolor sit amet.",
+            //         },
+            //       ],
+            //     },
+            //   },
+            //   fields: [
+            //     {
+            //       type: "object",
+            //       name: "featureList",
+            //       label: "Feature List",
+            //       list: true,
+            //       fields: [
+            //         {
+            //           name: "image",
+            //           label: "Feature Image",
+            //           type: "image",
+            //         },
+            //         {
+            //           name: "title",
+            //           label: "Feature Title",
+            //           type: "string",
+            //         },
+            //         {
+            //           name: "desc",
+            //           label: "Feature Text",
+            //           type: "string",
+            //           ui: {
+            //             component: "textarea",
+            //           },
+            //         },
+            //       ],
+            //     },
+            //   ],
+            // },
           ],
           isBody: true
         }

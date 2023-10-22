@@ -20,9 +20,9 @@ const components = {
       </Button>
     );
   },
-  FeatureSection: (props) => {
-    return <FeaturesBlock features={props.featureList} />;
-  },
+  // FeatureSection: (props) => {
+  //   return <FeaturesBlock features={props.featureList} />;
+  // },
   VideoPlayer: (props) => {
     return <ReactPlayer controls="true" url={props.url} />;
   },
