@@ -17,6 +17,12 @@ var schema = {
         },
         {
           type: "string",
+          label: "Intro Paragraph",
+          name: "intro",
+          description: "Shows up in large font under the title"
+        },
+        {
+          type: "string",
           label: "Section",
           name: "section"
         },

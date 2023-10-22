@@ -6,7 +6,7 @@ import FeaturesBlock from "../../blocks/features-block";
 import Callout from "../../blocks/callout-block";
 import ReactPlayer from "react-player/lazy";
 import Page404 from "../404.js";
-import { useTina } from "tinacms/dist/react";
+import { useTina, tinaField } from "tinacms/dist/react";
 import { client } from "../../.tina/__generated__/client";
 
 const components = {
@@ -39,6 +39,8 @@ function DocPage(props) {
     const sideNav = sideMenuItems(data);
     return (
       <DocLayout title={data.docs.title} navGroups={sideNav}>
+        <h1>{data.docs.title}</h1>
+        <p>{data.docs.intro}</p>
         <TinaMarkdown components={components} content={data.docs.body} />
       </DocLayout>
     );
