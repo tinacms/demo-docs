@@ -1,4 +1,4 @@
-> [!IMPORTANT]  
+> [!WARNING]  
 > This template is no longer maintained and may not be in a working state.
 
 # Tina Documentation Starter
