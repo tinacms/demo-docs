@@ -1,3 +1,6 @@
+> [!WARNING]  
+> This template is no longer maintained and may not be in a working state.
+
 # Tina Documentation Starter
 
 This Next.js starter is powered by TinaCMS and based upon [Smooth Doc](https://github.com/lwz7512/next-smooth-doc) it allows you and your team to create beautiful docs powered by MDX.
